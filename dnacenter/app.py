@@ -41,6 +41,12 @@ def create_url(path, ip=DNAC_IP):
 
 
 def request_api(path):
+    """
+    Send a request to the API
+    :param path: (string)
+    :return: response (dict)
+    """
+
     url = create_url(path)
     token = get_auth_token()
     headers = {
@@ -53,6 +59,11 @@ def request_api(path):
 
 
 def get_devices():
+    """
+    Get the network devices from DNA center
+    :return: devices (dict)
+    """
+
     devices = request_api('network-device')
     return devices
 
